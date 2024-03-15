@@ -11,6 +11,18 @@ type Card = {
   thumbnail: string;
 };
 
+export function GalleryGrid() {
+  return (
+    <div>
+      <div className="h-screen w-full">
+        <div className="absolute h-screen py-20 w-full">
+          <LayoutGrid cards={cards} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
@@ -26,9 +38,17 @@ const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
+    <div className="w-full h-full px-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <div
+          key={i}
+          className={cn(
+            card.className,
+            selected?.id !== card.id
+              ? "hover:scale-[1.025] transition-transform duration-200"
+              : ""
+          )}
+        >
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
@@ -108,18 +128,6 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
     </div>
   );
 };
-
-export function LayoutGridDemo() {
-  return (
-    <div>
-      <div className="h-screen w-full">
-        <div className="absolute h-screen py-20 w-full">
-          <LayoutGrid cards={cards} />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 const SkeletonOne = () => {
   return (

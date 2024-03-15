@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { scroller } from "react-scroll";
 
 const unsplashUrl =
   "https://images.unsplash.com/photo-1553051021-9f94520a6cad?q=80&w=1740&auto=format&fit=crop";
@@ -14,6 +15,14 @@ const containerVariants = {
 };
 
 const HeroSection = () => {
+  const scrollToAbout = () => {
+    scroller.scrollTo("about", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <motion.div
       className="relative h-screen flex justify-center items-center"
@@ -81,14 +90,14 @@ const HeroSection = () => {
             transition={{ duration: 0.2 }}
             whileHover={{ scale: 1.05 }}
           >
-            <motion.a
-              href="#gallery"
-              className="px-8 py-3 text-white font-semibold rounded-lg shadow bg-[#875034]"
+            <motion.button
+              onClick={() => scrollToAbout()}
+              className="px-8 py-3 text-white font-semibold rounded-lg shadow bg-[#875034] cursor-pointer"
               animate={{ backgroundColor: ["#875034", "#693624", "#875034"] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
               Explore Our Gallery
-            </motion.a>
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>

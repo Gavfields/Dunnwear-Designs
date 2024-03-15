@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn.discordapp.com",
+        hostname: "plus.unsplash.com",
         port: "",
       },
     ],

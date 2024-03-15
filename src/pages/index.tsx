@@ -1,7 +1,8 @@
 import AboutSection from "@/components/About";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
-import { LayoutGridDemo } from "@/components/Gallery";
+import { GalleryGrid } from "@/components/Gallery";
+import { GalleryCarousel } from "@/components/GalleryCarousel";
 import HeroSection from "@/components/Hero";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Cinzel } from "next/font/google";
@@ -13,10 +14,20 @@ export default function Home() {
     <div className={`${cabin.className}`}>
       <ThemeToggle />
       <HeroSection />
-      <AboutSection />
-      <LayoutGridDemo />
-      <ContactUs />
-      <Footer />
+      <div
+        style={{
+          minHeight: "100vh",
+          backdropFilter: "blur(10px)",
+          backgroundImage:
+            "radial-gradient(at top, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0))",
+        }}
+      >
+        <AboutSection />
+        <GalleryGrid />
+        <GalleryCarousel />
+        <ContactUs />
+        <Footer />
+      </div>
     </div>
   );
 }
