@@ -50,7 +50,7 @@ export default function ServicesSection() {
                 className="bg-white border-solid border-2 dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-110 hover:shadow-2xl transition duration-300"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * (index + 1), duration: 0.1 }}
+                transition={{ delay: 0.1 * (index + 1), duration: 0.25 }}
                 viewport={{ once: true }}
               >
                 <div className="text-center text-[#875034]">{service.icon}</div>

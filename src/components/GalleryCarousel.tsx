@@ -41,7 +41,7 @@ export function GalleryCarousel() {
   const plugin = React.useRef(Autoplay({ delay: 2500 }));
 
   return (
-    <div className="flex justify-center mb-20">
+    <div className="flex justify-center mt-20 overflow-x-hidden">
       <Carousel
         className="w-full max-w-lg lg:max-w-3xl"
         plugins={[plugin.current]}

@@ -25,8 +25,8 @@ export default function Home() {
       >
         <AboutSection />
         <GalleryGrid />
-        <ServicesSection />
         <GalleryCarousel />
+        <ServicesSection />
         <ContactUs />
         <Footer />
       </div>
