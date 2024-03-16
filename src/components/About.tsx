@@ -7,7 +7,7 @@ const image =
 const AboutSection = () => {
   return (
     <Element name="about">
-      <div className="flex flex-col pt-28 md:flex-row items-center justify-center gap-16 p-6 overflow-hidden">
+      <div className="flex flex-col pt-24 px-10 md:px-10 md:flex-row items-center justify-center gap-16 overflow-hidden">
         <motion.img
           src={image}
           alt="Our Story"
@@ -24,8 +24,10 @@ const AboutSection = () => {
           className="text-center md:text-left max-w-md"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-4">The Makers Story</h2>
-          <p>
+          <h2 className="text-3xl xs:text-xl sm:text-2xl font-bold mb-4">
+            The Makers Story
+          </h2>
+          <p className="text-md sm:text-md md:text-md lg:text-lg">
             At Dunnwear Enterprises, our art is a testament to craftsmanship,
             where precision and passion merge. Each creation is a carefully
             curated piece, reflecting a dedication to quality and the timeless

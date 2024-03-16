@@ -96,7 +96,7 @@ const HeroSection = () => {
               animate={{ backgroundColor: ["#875034", "#693624", "#875034"] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
-              Explore Our Gallery
+              Learn More
             </motion.button>
           </motion.div>
         </motion.div>

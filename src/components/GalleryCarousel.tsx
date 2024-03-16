@@ -1,6 +1,4 @@
 import * as React from "react";
-
-import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -43,7 +41,7 @@ export function GalleryCarousel() {
   const plugin = React.useRef(Autoplay({ delay: 2500 }));
 
   return (
-    <div className="flex justify-center mb-20 mx-24 md:mx-0">
+    <div className="flex justify-center mb-20">
       <Carousel
         className="w-full max-w-lg lg:max-w-3xl"
         plugins={[plugin.current]}
@@ -53,17 +51,17 @@ export function GalleryCarousel() {
           loop: true,
         }}
       >
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="ml-[1.5] md:ml-0">
           {images.map((image, index) => (
-            <CarouselItem key={index} className="pl-6 md:basis-1/2">
+            <CarouselItem key={index} className="px-10 sm:pl-10 md:basis-1/2">
               <div className="flex aspect-square items-center justify-center">
                 <BlurImage src={image.src} alt={image.alt} />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext />
-        <CarouselPrevious />
+        <CarouselNext className="invisible border-black md:visible dark:bg-black dark:border-white" />
+        <CarouselPrevious className="invisible border-black mr-4 md:visible dark:bg-black dark:border-white" />
       </Carousel>
     </div>
   );

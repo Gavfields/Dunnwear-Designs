@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { GalleryGrid } from "@/components/Gallery";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
 import HeroSection from "@/components/Hero";
+import ServicesSection from "@/components/Services";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Cinzel } from "next/font/google";
 
@@ -24,6 +25,7 @@ export default function Home() {
       >
         <AboutSection />
         <GalleryGrid />
+        <ServicesSection />
         <GalleryCarousel />
         <ContactUs />
         <Footer />

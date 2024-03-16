@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import { Element } from "react-scroll";
 
 type Card = {
   id: number;
@@ -13,13 +14,13 @@ type Card = {
 
 export function GalleryGrid() {
   return (
-    <div>
+    <Element name="gallery">
       <div className="h-screen w-full">
-        <div className="absolute h-screen py-20 w-full">
+        <div className="absolute h-screen pt-20 w-full">
           <LayoutGrid cards={cards} />
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 
@@ -73,7 +74,6 @@ const LayoutGrid = ({ cards }: { cards: Card[] }) => {
           "absolute h-full w-full left-0 top-0 opacity-0 z-10",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
-        animate={{ opacity: selected?.id ? 0.3 : 0 }}
       />
     </div>
   );
